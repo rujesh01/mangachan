@@ -44,12 +44,4 @@ cd mangachan
 # Install dependencies using Bun
 bun install
 
-# Run the development server
-bun run dev
-mangachan/
-├── components/     # Reusable UI components
-├── pages/          # Application pages (Next.js routing)
-├── lib/            # API utilities and helpers
-├── styles/         # Global and component-specific styles
-├── public/         # Static assets
-└── README.md       # Project documentation
+
