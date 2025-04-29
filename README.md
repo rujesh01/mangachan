@@ -1,9 +1,10 @@
-# 🌸 Mangachan
+
+![theMangachanLogo](https://github.com/user-attachments/assets/56515476-bb3f-4c23-883a-4b21c70874cd)
+
 
 **Mangachan** is a modern, minimalistic manga reading web application built with cutting-edge web technologies. Designed for manga enthusiasts, it enables seamless manga discovery, search, and reading — all within a clean and responsive user interface.
 
 ---
-
 ## 📚 Table of Contents
 
 - [Features](#features)
@@ -13,7 +14,6 @@
   - [Installation](#installation)
   - [Usage](#usage)
   - [MangaDex API Configuration](#mangadex-api-configuration)
-- [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -93,21 +93,39 @@ Configure credentials in environment variables or appropriate config files.
 
 ⚠️ Note: Respect MangaDex’s rate limits. Avoid excessive requests.
 
-📦 Deployment
-Mangachan is optimized for deployment on Vercel, but supports other platforms:
+🤝 Contributing
+We welcome contributions! Here's how to get started:
 
-🚀 Deploy on Vercel:
-Sign in at vercel.com
+Fork the repo
 
-Click New Project and import your GitHub repo
+Create your feature branch:
 
-Vercel auto-detects Next.js – hit Deploy
+bash
+Copy
+Edit
+git checkout -b feature/your-feature-name
+Commit your changes:
 
-🌐 Alternative Platforms:
-Netlify
+bash
+Copy
+Edit
+git commit -m "feat: added your feature"
+Push to your branch:
 
-Render
+bash
+Copy
+Edit
+git push origin feature/your-feature-name
+Open a Pull Request on GitHub
 
-Custom VPS or Docker
+🔍 Please follow coding standards and include tests if applicable. Check CONTRIBUTING.md if available.
 
-Refer to each provider’s Next.js deployment guide.
+📄 License
+This project is licensed under the MIT License.
+
+📬 Contact
+For issues, suggestions, or feature requests:
+
+Open an issue on GitHub
+
+We appreciate your feedback and contributions!
