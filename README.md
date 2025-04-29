@@ -82,43 +82,6 @@ Mangachan fetches manga data using the MangaDex API.
 
 Basic Usage: No authentication needed for public content.
 
-Advanced Features (e.g. saving favorites): Requires OAuth 2.0.
-
-🔐 Setup OAuth:
-Register on MangaDex
-
-Obtain a client ID and secret following their API docs
-
-Configure credentials in environment variables or appropriate config files.
-
-⚠️ Note: Respect MangaDex’s rate limits. Avoid excessive requests.
-
-🤝 Contributing
-We welcome contributions! Here's how to get started:
-
-Fork the repo
-
-Create your feature branch:
-
-bash
-Copy
-Edit
-git checkout -b feature/your-feature-name
-Commit your changes:
-
-bash
-Copy
-Edit
-git commit -m "feat: added your feature"
-Push to your branch:
-
-bash
-Copy
-Edit
-git push origin feature/your-feature-name
-Open a Pull Request on GitHub
-
-🔍 Please follow coding standards and include tests if applicable. Check CONTRIBUTING.md if available.
 
 📄 License
 This project is licensed under the MIT License.
