@@ -1,10 +1,10 @@
 "use client";
 
+import { useQuery } from "@tanstack/react-query";
 import { GetChapters } from "@/actions/GetApiData";
 import { columns } from "./columns";
 import { DataTable } from "./data-table";
 import { MangaChapter } from "@/types/types";
-import { useQuery } from "@tanstack/react-query";
 import { Skeleton } from "@/components/ui/skeleton";
 
 type Props = {
@@ -18,15 +18,13 @@ const ChapterTable = ({ mangaId }: Props) => {
   });
 
   return (
-    <div className="container mx-auto py-10">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-6">
       {isLoading ? (
         <div className="space-y-4">
-          <div className="flex flex-col gap-4">
-            <Skeleton className="h-6 w-full" />
-            <Skeleton className="h-6 w-full" />
-            <Skeleton className="h-6 w-full" />
-            <Skeleton className="h-6 w-full" />
-          </div>
+          <Skeleton className="h-6 w-full" />
+          <Skeleton className="h-6 w-full" />
+          <Skeleton className="h-6 w-full" />
+          <Skeleton className="h-6 w-full" />
         </div>
       ) : (
         <DataTable columns={columns} mangaId={mangaId} data={data || []} />
