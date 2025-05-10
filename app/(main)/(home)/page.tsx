@@ -22,7 +22,9 @@ const HomePage = async () => {
       <section className="w-full py-12 px-4 text-center">
         <div className="max-w-xl mx-auto bg-red-100 border border-red-300 text-red-700 rounded-xl p-6">
           <h2 className="text-lg font-semibold mb-2">Data Load Failed</h2>
-          <p>We couldn't fetch the latest manga. Please try again later.</p>
+          <p>
+            We could&rsquo;t fetch the latest manga. Please try again later.
+          </p>
         </div>
       </section>
     );
@@ -41,7 +43,6 @@ const HomePage = async () => {
       {/* Popular Manga Section */}
       <section className="space-y-6">
         <PopularSection mangaData={popularData} />
-        
       </section>
     </main>
   );
