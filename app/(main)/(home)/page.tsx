@@ -41,6 +41,7 @@ const HomePage = async () => {
       {/* Popular Manga Section */}
       <section className="space-y-6">
         <PopularSection mangaData={popularData} />
+        
       </section>
     </main>
   );
