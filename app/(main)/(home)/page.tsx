@@ -3,7 +3,6 @@ import {
   GetLatestUpdatedManga,
   GetLatestChapters,
 } from "@/actions/GetApiData";
-import MangaCarousel from "@/components/card/mangaCarousel";
 import LatestManga from "@/components/home/Latest";
 import PopularSection from "@/components/home/popular";
 
