@@ -1,25 +1,49 @@
-import { GetPopularManga } from "@/actions/GetApiData";
+import {
+  GetPopularManga,
+  GetLatestUpdatedManga,
+  GetLatestChapters,
+} from "@/actions/GetApiData";
 import MangaCarousel from "@/components/card/mangaCarousel";
+import LatestManga from "@/components/home/Latest";
 import PopularSection from "@/components/home/popular";
 
 const HomePage = async () => {
-  const mangaData = await GetPopularManga();
+  const [popularData, latestUpdatedData, latestChaptersData] =
+    await Promise.all([
+      GetPopularManga(),
+      GetLatestUpdatedManga(),
+      GetLatestChapters(),
+    ]);
 
-  if (!mangaData || !mangaData.data) {
+  const isDataInvalid =
+    !popularData?.data || !latestUpdatedData?.data || !latestChaptersData?.data;
+
+  if (isDataInvalid) {
     return (
-      <section className="w-full py-6 text-center">
-        <p className="text-destructive font-medium">
-          Failed to load manga data.
-        </p>
+      <section className="w-full py-12 px-4 text-center">
+        <div className="max-w-xl mx-auto bg-red-100 border border-red-300 text-red-700 rounded-xl p-6">
+          <h2 className="text-lg font-semibold mb-2">Data Load Failed</h2>
+          <p>We couldn't fetch the latest manga. Please try again later.</p>
+        </div>
       </section>
     );
   }
 
   return (
-    <div className="space-y-10">
-      <MangaCarousel />
-      <PopularSection mangaData={mangaData} />
-    </div>
+    <main className="w-full px-4 md:px-8 lg:px-16 py-10 space-y-16">
+      {/* Latest Updated Manga Section */}
+      <section className="space-y-6">
+        {/* <h2 className="text-2xl font-semibold text-primary">
+          Recently Updated
+        </h2> */}
+        <LatestManga latestMangaData={latestChaptersData} />
+      </section>
+
+      {/* Popular Manga Section */}
+      <section className="space-y-6">
+        <PopularSection mangaData={popularData} />
+      </section>
+    </main>
   );
 };
 
