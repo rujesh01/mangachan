@@ -38,10 +38,56 @@ export const GetPopularManga = async () => {
 
 export const GetLatestUpdatedManga = async () => {
   try {
+    const res = await fetch(
+      `${baseUrl}/manga?limit=12&order[latestUploadedChapter]=desc`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch latest updated manga: ${res.statusText}`);
+    }
+
+    const data = await res.json();
+    return data as MangaCollectionResponse;
   } catch (error) {
-    return { error: "something went wrong", status: 400 };
+    console.error("GetLatestUpdatedManga error:", error);
+    return undefined;
   }
 };
+
+
+
+
+export const GetLatestChapters = async () => {
+  try {
+    const res = await fetch(
+      `${baseUrl}/chapter?limit=12&order[createdAt]=desc&translatedLanguage[]=en`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch latest chapters: ${res.statusText}`);
+    }
+
+    const data = await res.json();
+    return data ;
+  } catch (error) {
+    console.error("GetLatestChapters error:", error);
+    return undefined;
+  }
+};
+
+
 
 ///// this is to get cover image id
 
